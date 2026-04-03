@@ -1,11 +1,20 @@
 import React from 'react';
+import PlannerHeader from './components/PlannerHeader';
+import MonthExpander from './components/MonthExpander';
+import WeekExpander from './components/WeekExpander';
+import DayPagination from './components/DayPagination';
+import DayPage from './components/DayPage';
 
-function App() {
-  return (
-    <div>
-      <h1>Business Planner</h1>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div>
+            <PlannerHeader />
+            <MonthExpander />
+            <WeekExpander />
+            <DayPagination />
+            <DayPage />
+        </div>
+    );
+};
 
 export default App;
