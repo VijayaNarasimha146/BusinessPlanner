@@ -3,6 +3,8 @@ import PlannerHeader from "./components/PlannerHeader";
 import MonthList from "./components/MonthList";
 import PlannedMonthsOverview from "./components/PlannedMonthsOverview";
 
+const PLANNER_STORAGE_KEY = "business-planner-data";
+
 const padNumber = value => String(value).padStart(2, "0");
 
 const getMonthId = (year, monthIndex) => `${year}-${padNumber(monthIndex + 1)}`;
@@ -167,41 +169,27 @@ const App = () => {
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    let isCancelled = false;
+    try {
+      const rawData = window.localStorage.getItem(PLANNER_STORAGE_KEY);
+      const payload = rawData ? JSON.parse(rawData) : { months: [] };
+      const normalizedMonths = Array.isArray(payload.months)
+        ? payload.months.map(normalizeMonthPlan).filter(Boolean)
+        : [];
+      const preparedMonths = ensureTodayMonth(normalizedMonths);
+      const { monthId } = getTodayReference();
 
-    const loadPlanner = async () => {
-      try {
-        const response = await fetch("/api/planner");
-        const payload = response.ok ? await response.json() : { months: [] };
-        const normalizedMonths = Array.isArray(payload.months)
-          ? payload.months.map(normalizeMonthPlan).filter(Boolean)
-          : [];
-        const preparedMonths = ensureTodayMonth(normalizedMonths);
-        const { monthId } = getTodayReference();
+      setMonths(preparedMonths);
+      setActiveMonthId(monthId);
+      setIsHydrated(true);
+    } catch (error) {
+      const fallbackMonths = ensureTodayMonth([]);
+      const { monthId } = getTodayReference();
 
-        if (!isCancelled) {
-          setMonths(preparedMonths);
-          setActiveMonthId(monthId);
-          setIsHydrated(true);
-        }
-      } catch (error) {
-        const fallbackMonths = ensureTodayMonth([]);
-        const { monthId } = getTodayReference();
-
-        if (!isCancelled) {
-          console.error("Unable to load planner data.", error);
-          setMonths(fallbackMonths);
-          setActiveMonthId(monthId);
-          setIsHydrated(true);
-        }
-      }
-    };
-
-    loadPlanner();
-
-    return () => {
-      isCancelled = true;
-    };
+      console.error("Unable to load planner data from localStorage.", error);
+      setMonths(fallbackMonths);
+      setActiveMonthId(monthId);
+      setIsHydrated(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -209,21 +197,14 @@ const App = () => {
       return;
     }
 
-    const savePlanner = async () => {
-      try {
-        await fetch("/api/planner", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ months })
-        });
-      } catch (error) {
-        console.error("Unable to save planner data.", error);
-      }
-    };
-
-    savePlanner();
+    try {
+      window.localStorage.setItem(
+        PLANNER_STORAGE_KEY,
+        JSON.stringify({ months })
+      );
+    } catch (error) {
+      console.error("Unable to save planner data to localStorage.", error);
+    }
   }, [isHydrated, months]);
 
   const addMonth = () => {
