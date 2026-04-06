@@ -1,1 +1,16 @@
-{\n  "name": "business-planner",\n  "version": "1.0.0",\n  "scripts": {\n    "start": "vite",\n    "build": "vite build"\n  },\n  "dependencies": {\n    "react": "latest",\n    "react-dom": "latest"\n  },\n  "devDependencies": {\n    "vite": "latest"\n  }\n}
+{
+  "name": "business-planner",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "vite": "latest"
+  }
+}
