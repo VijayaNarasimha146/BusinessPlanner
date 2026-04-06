@@ -1,0 +1,722 @@
+{
+  "months": [
+    {
+      "id": "2026-04",
+      "month": "April",
+      "year": 2026,
+      "monthIndex": 3,
+      "weeks": [
+        {
+          "id": "2026-04-week-1",
+          "order": 1,
+          "rangeLabel": "Apr 1 - 7",
+          "days": [
+            {
+              "id": "2026-04-01",
+              "dayOfMonth": 1,
+              "dateLabel": "01",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "1 April 2026",
+              "dateKey": "2026-04-01",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-02",
+              "dayOfMonth": 2,
+              "dateLabel": "02",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "2 April 2026",
+              "dateKey": "2026-04-02",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-03",
+              "dayOfMonth": 3,
+              "dateLabel": "03",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "3 April 2026",
+              "dateKey": "2026-04-03",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-04",
+              "dayOfMonth": 4,
+              "dateLabel": "04",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "4 April 2026",
+              "dateKey": "2026-04-04",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-05",
+              "dayOfMonth": 5,
+              "dateLabel": "05",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "5 April 2026",
+              "dateKey": "2026-04-05",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-06",
+              "dayOfMonth": 6,
+              "dateLabel": "06",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "6 April 2026",
+              "dateKey": "2026-04-06",
+              "tasks": [
+                {
+                  "id": "2026-04-06-1775482514818-1",
+                  "text": "Create Business Planner",
+                  "isDone": true
+                },
+                {
+                  "id": "2026-04-06-1775482532202-2",
+                  "text": "Add Styling to Planner",
+                  "isDone": true
+                },
+                {
+                  "id": "2026-04-06-1775482569424-3",
+                  "text": "Add saving to Planner and Planned Months summary",
+                  "isDone": true
+                }
+              ]
+            },
+            {
+              "id": "2026-04-07",
+              "dayOfMonth": 7,
+              "dateLabel": "07",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "7 April 2026",
+              "dateKey": "2026-04-07",
+              "tasks": [
+                {
+                  "id": "2026-04-07-1775482846965-1",
+                  "text": "Create a Check List tool to track daily activities",
+                  "isDone": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2026-04-week-2",
+          "order": 2,
+          "rangeLabel": "Apr 8 - 14",
+          "days": [
+            {
+              "id": "2026-04-08",
+              "dayOfMonth": 8,
+              "dateLabel": "08",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "8 April 2026",
+              "dateKey": "2026-04-08",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-09",
+              "dayOfMonth": 9,
+              "dateLabel": "09",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "9 April 2026",
+              "dateKey": "2026-04-09",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-10",
+              "dayOfMonth": 10,
+              "dateLabel": "10",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "10 April 2026",
+              "dateKey": "2026-04-10",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-11",
+              "dayOfMonth": 11,
+              "dateLabel": "11",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "11 April 2026",
+              "dateKey": "2026-04-11",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-12",
+              "dayOfMonth": 12,
+              "dateLabel": "12",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "12 April 2026",
+              "dateKey": "2026-04-12",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-13",
+              "dayOfMonth": 13,
+              "dateLabel": "13",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "13 April 2026",
+              "dateKey": "2026-04-13",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-14",
+              "dayOfMonth": 14,
+              "dateLabel": "14",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "14 April 2026",
+              "dateKey": "2026-04-14",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-04-week-3",
+          "order": 3,
+          "rangeLabel": "Apr 15 - 21",
+          "days": [
+            {
+              "id": "2026-04-15",
+              "dayOfMonth": 15,
+              "dateLabel": "15",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "15 April 2026",
+              "dateKey": "2026-04-15",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-16",
+              "dayOfMonth": 16,
+              "dateLabel": "16",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "16 April 2026",
+              "dateKey": "2026-04-16",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-17",
+              "dayOfMonth": 17,
+              "dateLabel": "17",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "17 April 2026",
+              "dateKey": "2026-04-17",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-18",
+              "dayOfMonth": 18,
+              "dateLabel": "18",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "18 April 2026",
+              "dateKey": "2026-04-18",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-19",
+              "dayOfMonth": 19,
+              "dateLabel": "19",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "19 April 2026",
+              "dateKey": "2026-04-19",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-20",
+              "dayOfMonth": 20,
+              "dateLabel": "20",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "20 April 2026",
+              "dateKey": "2026-04-20",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-21",
+              "dayOfMonth": 21,
+              "dateLabel": "21",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "21 April 2026",
+              "dateKey": "2026-04-21",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-04-week-4",
+          "order": 4,
+          "rangeLabel": "Apr 22 - 28",
+          "days": [
+            {
+              "id": "2026-04-22",
+              "dayOfMonth": 22,
+              "dateLabel": "22",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "22 April 2026",
+              "dateKey": "2026-04-22",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-23",
+              "dayOfMonth": 23,
+              "dateLabel": "23",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "23 April 2026",
+              "dateKey": "2026-04-23",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-24",
+              "dayOfMonth": 24,
+              "dateLabel": "24",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "24 April 2026",
+              "dateKey": "2026-04-24",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-25",
+              "dayOfMonth": 25,
+              "dateLabel": "25",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "25 April 2026",
+              "dateKey": "2026-04-25",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-26",
+              "dayOfMonth": 26,
+              "dateLabel": "26",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "26 April 2026",
+              "dateKey": "2026-04-26",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-27",
+              "dayOfMonth": 27,
+              "dateLabel": "27",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "27 April 2026",
+              "dateKey": "2026-04-27",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-28",
+              "dayOfMonth": 28,
+              "dateLabel": "28",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "28 April 2026",
+              "dateKey": "2026-04-28",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-04-week-5",
+          "order": 5,
+          "rangeLabel": "Apr 29 - 30",
+          "days": [
+            {
+              "id": "2026-04-29",
+              "dayOfMonth": 29,
+              "dateLabel": "29",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "29 April 2026",
+              "dateKey": "2026-04-29",
+              "tasks": []
+            },
+            {
+              "id": "2026-04-30",
+              "dayOfMonth": 30,
+              "dateLabel": "30",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "30 April 2026",
+              "dateKey": "2026-04-30",
+              "tasks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-05",
+      "month": "May",
+      "year": 2026,
+      "monthIndex": 4,
+      "weeks": [
+        {
+          "id": "2026-05-week-1",
+          "order": 1,
+          "rangeLabel": "May 1 - 7",
+          "days": [
+            {
+              "id": "2026-05-01",
+              "dayOfMonth": 1,
+              "dateLabel": "01",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "1 May 2026",
+              "dateKey": "2026-05-01",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-02",
+              "dayOfMonth": 2,
+              "dateLabel": "02",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "2 May 2026",
+              "dateKey": "2026-05-02",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-03",
+              "dayOfMonth": 3,
+              "dateLabel": "03",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "3 May 2026",
+              "dateKey": "2026-05-03",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-04",
+              "dayOfMonth": 4,
+              "dateLabel": "04",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "4 May 2026",
+              "dateKey": "2026-05-04",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-05",
+              "dayOfMonth": 5,
+              "dateLabel": "05",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "5 May 2026",
+              "dateKey": "2026-05-05",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-06",
+              "dayOfMonth": 6,
+              "dateLabel": "06",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "6 May 2026",
+              "dateKey": "2026-05-06",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-07",
+              "dayOfMonth": 7,
+              "dateLabel": "07",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "7 May 2026",
+              "dateKey": "2026-05-07",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-05-week-2",
+          "order": 2,
+          "rangeLabel": "May 8 - 14",
+          "days": [
+            {
+              "id": "2026-05-08",
+              "dayOfMonth": 8,
+              "dateLabel": "08",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "8 May 2026",
+              "dateKey": "2026-05-08",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-09",
+              "dayOfMonth": 9,
+              "dateLabel": "09",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "9 May 2026",
+              "dateKey": "2026-05-09",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-10",
+              "dayOfMonth": 10,
+              "dateLabel": "10",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "10 May 2026",
+              "dateKey": "2026-05-10",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-11",
+              "dayOfMonth": 11,
+              "dateLabel": "11",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "11 May 2026",
+              "dateKey": "2026-05-11",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-12",
+              "dayOfMonth": 12,
+              "dateLabel": "12",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "12 May 2026",
+              "dateKey": "2026-05-12",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-13",
+              "dayOfMonth": 13,
+              "dateLabel": "13",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "13 May 2026",
+              "dateKey": "2026-05-13",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-14",
+              "dayOfMonth": 14,
+              "dateLabel": "14",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "14 May 2026",
+              "dateKey": "2026-05-14",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-05-week-3",
+          "order": 3,
+          "rangeLabel": "May 15 - 21",
+          "days": [
+            {
+              "id": "2026-05-15",
+              "dayOfMonth": 15,
+              "dateLabel": "15",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "15 May 2026",
+              "dateKey": "2026-05-15",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-16",
+              "dayOfMonth": 16,
+              "dateLabel": "16",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "16 May 2026",
+              "dateKey": "2026-05-16",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-17",
+              "dayOfMonth": 17,
+              "dateLabel": "17",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "17 May 2026",
+              "dateKey": "2026-05-17",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-18",
+              "dayOfMonth": 18,
+              "dateLabel": "18",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "18 May 2026",
+              "dateKey": "2026-05-18",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-19",
+              "dayOfMonth": 19,
+              "dateLabel": "19",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "19 May 2026",
+              "dateKey": "2026-05-19",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-20",
+              "dayOfMonth": 20,
+              "dateLabel": "20",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "20 May 2026",
+              "dateKey": "2026-05-20",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-21",
+              "dayOfMonth": 21,
+              "dateLabel": "21",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "21 May 2026",
+              "dateKey": "2026-05-21",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-05-week-4",
+          "order": 4,
+          "rangeLabel": "May 22 - 28",
+          "days": [
+            {
+              "id": "2026-05-22",
+              "dayOfMonth": 22,
+              "dateLabel": "22",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "22 May 2026",
+              "dateKey": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-23",
+              "dayOfMonth": 23,
+              "dateLabel": "23",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "23 May 2026",
+              "dateKey": "2026-05-23",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-24",
+              "dayOfMonth": 24,
+              "dateLabel": "24",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "24 May 2026",
+              "dateKey": "2026-05-24",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-25",
+              "dayOfMonth": 25,
+              "dateLabel": "25",
+              "shortDay": "Mon",
+              "fullDay": "Monday",
+              "fullDate": "25 May 2026",
+              "dateKey": "2026-05-25",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-26",
+              "dayOfMonth": 26,
+              "dateLabel": "26",
+              "shortDay": "Tue",
+              "fullDay": "Tuesday",
+              "fullDate": "26 May 2026",
+              "dateKey": "2026-05-26",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-27",
+              "dayOfMonth": 27,
+              "dateLabel": "27",
+              "shortDay": "Wed",
+              "fullDay": "Wednesday",
+              "fullDate": "27 May 2026",
+              "dateKey": "2026-05-27",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-28",
+              "dayOfMonth": 28,
+              "dateLabel": "28",
+              "shortDay": "Thu",
+              "fullDay": "Thursday",
+              "fullDate": "28 May 2026",
+              "dateKey": "2026-05-28",
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "2026-05-week-5",
+          "order": 5,
+          "rangeLabel": "May 29 - 31",
+          "days": [
+            {
+              "id": "2026-05-29",
+              "dayOfMonth": 29,
+              "dateLabel": "29",
+              "shortDay": "Fri",
+              "fullDay": "Friday",
+              "fullDate": "29 May 2026",
+              "dateKey": "2026-05-29",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-30",
+              "dayOfMonth": 30,
+              "dateLabel": "30",
+              "shortDay": "Sat",
+              "fullDay": "Saturday",
+              "fullDate": "30 May 2026",
+              "dateKey": "2026-05-30",
+              "tasks": []
+            },
+            {
+              "id": "2026-05-31",
+              "dayOfMonth": 31,
+              "dateLabel": "31",
+              "shortDay": "Sun",
+              "fullDay": "Sunday",
+              "fullDate": "31 May 2026",
+              "dateKey": "2026-05-31",
+              "tasks": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

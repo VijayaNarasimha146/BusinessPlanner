@@ -1,41 +1,87 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-const DayPage = () => {
-    const [tasks, setTasks] = useState([]);
-    const [taskInput, setTaskInput] = useState('');
+const DayPage = ({ day, onAddTask, onDeleteTask, onCompleteTask }) => {
+  const [taskInput, setTaskInput] = useState("");
 
-    const handleAddTask = () => {
-        if (taskInput.trim()) {
-            setTasks([...tasks, taskInput]);
-            setTaskInput('');
-        }
-    };
+  const handleAddTask = () => {
+    onAddTask(taskInput);
+    setTaskInput("");
+  };
 
-    const handleDeleteTask = (index) => {
-        const newTasks = tasks.filter((_, i) => i !== index);
-        setTasks(newTasks);
-    };
+  const handleDeleteTask = taskId => {
+    if (window.confirm("Are you sure you want to delete this task?")) {
+      onDeleteTask(taskId);
+    }
+  };
 
-    return (
+  useEffect(() => {
+    setTaskInput("");
+  }, [day?.id]);
+
+  if (!day) {
+    return null;
+  }
+
+  return (
+    <section className="task-panel">
+      <div className="section-heading">
         <div>
-            <h2>Task Management</h2>
-            <input
-                type="text"
-                value={taskInput}
-                onChange={(e) => setTaskInput(e.target.value)}
-                placeholder="Enter new task"
-            />
-            <button onClick={handleAddTask}>Add Task</button>
-            <ul>
-                {tasks.map((task, index) => (
-                    <li key={index}>
-                        {task}
-                        <button onClick={() => handleDeleteTask(index)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+          <p className="section-label">Daily Tasks</p>
+          <h3>{day.fullDay}</h3>
+          <p className="selected-date">{day.fullDate}</p>
         </div>
-    );
+        <span className="muted-meta">{day.tasks.length} tasks</span>
+      </div>
+
+      <div className="task-entry">
+        <input
+          className="task-input"
+          type="text"
+          value={taskInput}
+          onChange={event => setTaskInput(event.target.value)}
+          placeholder="Enter a task for the selected day"
+        />
+        <button className="primary-button" onClick={handleAddTask}>
+          Add Task
+        </button>
+      </div>
+
+      {day.tasks.length === 0 ? (
+        <div className="task-empty">
+          No tasks for {day.shortDay}, {day.dateLabel} yet. Add one to build the
+          day plan.
+        </div>
+      ) : (
+        <ul className="task-list">
+          {day.tasks.map(task => (
+            <li className={`task-item${task.isDone ? " completed" : ""}`} key={task.id}>
+              <div className="task-copy">
+                <strong>
+                  {day.shortDay} {day.dateLabel}
+                </strong>
+                <span>{task.text}</span>
+              </div>
+              <div className="task-actions">
+                <button
+                  className={`success-button${task.isDone ? " disabled" : ""}`}
+                  disabled={task.isDone}
+                  onClick={() => onCompleteTask(task.id)}
+                >
+                  {task.isDone ? "Done" : "Mark Done"}
+                </button>
+                <button
+                  className="danger-button"
+                  onClick={() => handleDeleteTask(task.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
 };
 
 export default DayPage;
