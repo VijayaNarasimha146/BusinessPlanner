@@ -1,2 +1,0 @@
-# BusinessPlanner
-Business with Purpose
