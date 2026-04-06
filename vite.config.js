@@ -106,6 +106,7 @@ const plannerDbPlugin = () => ({
 });
 
 export default defineConfig({
+  base: '/BusinessPlanner/',
   plugins: [react(), plannerDbPlugin()],
   server: {
     port: 3000
