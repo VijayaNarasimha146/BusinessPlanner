@@ -129,6 +129,16 @@ button {
     padding: 22px;
 }
 
+.storage-banner {
+    padding: 22px;
+}
+
+.storage-copy {
+    margin: 10px 0 0;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
 .planned-months-list {
     display: flex;
     flex-wrap: wrap;

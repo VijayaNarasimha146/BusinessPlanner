@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { onSnapshot, setDoc } from "firebase/firestore";
 import PlannerHeader from "./components/PlannerHeader";
 import MonthList from "./components/MonthList";
 import PlannedMonthsOverview from "./components/PlannedMonthsOverview";
+import { hasFirebaseConfig, plannerDocRef } from "./lib/firebase";
 
 const PLANNER_STORAGE_KEY = "business-planner-data";
 
@@ -167,29 +169,82 @@ const App = () => {
   const [months, setMonths] = useState([]);
   const [activeMonthId, setActiveMonthId] = useState(null);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [storageMode, setStorageMode] = useState(
+    hasFirebaseConfig ? "firebase" : "local"
+  );
+  const lastPersistedRef = useRef("");
 
   useEffect(() => {
-    try {
-      const rawData = window.localStorage.getItem(PLANNER_STORAGE_KEY);
-      const payload = rawData ? JSON.parse(rawData) : { months: [] };
-      const normalizedMonths = Array.isArray(payload.months)
-        ? payload.months.map(normalizeMonthPlan).filter(Boolean)
+    const { monthId } = getTodayReference();
+
+    const applyMonths = incomingMonths => {
+      const normalizedMonths = Array.isArray(incomingMonths)
+        ? incomingMonths.map(normalizeMonthPlan).filter(Boolean)
         : [];
       const preparedMonths = ensureTodayMonth(normalizedMonths);
-      const { monthId } = getTodayReference();
+      const serializedMonths = JSON.stringify(preparedMonths);
 
+      lastPersistedRef.current = serializedMonths;
       setMonths(preparedMonths);
       setActiveMonthId(monthId);
       setIsHydrated(true);
-    } catch (error) {
-      const fallbackMonths = ensureTodayMonth([]);
-      const { monthId } = getTodayReference();
 
-      console.error("Unable to load planner data from localStorage.", error);
-      setMonths(fallbackMonths);
-      setActiveMonthId(monthId);
-      setIsHydrated(true);
+      return preparedMonths;
+    };
+
+    const loadFromLocalStorage = () => {
+      try {
+        const rawData = window.localStorage.getItem(PLANNER_STORAGE_KEY);
+        const payload = rawData ? JSON.parse(rawData) : { months: [] };
+        applyMonths(payload.months);
+      } catch (error) {
+        console.error("Unable to load planner data from localStorage.", error);
+        applyMonths([]);
+      }
+    };
+
+    if (!hasFirebaseConfig || !plannerDocRef) {
+      setStorageMode("local");
+      loadFromLocalStorage();
+      return;
     }
+
+    setStorageMode("firebase");
+
+    const unsubscribe = onSnapshot(
+      plannerDocRef,
+      async snapshot => {
+        if (snapshot.exists()) {
+          applyMonths(snapshot.data().months);
+          return;
+        }
+
+        try {
+          const rawData = window.localStorage.getItem(PLANNER_STORAGE_KEY);
+          const payload = rawData ? JSON.parse(rawData) : { months: [] };
+          const preparedMonths = applyMonths(payload.months);
+
+          await setDoc(plannerDocRef, {
+            months: preparedMonths,
+            updatedAt: new Date().toISOString()
+          });
+
+          window.localStorage.removeItem(PLANNER_STORAGE_KEY);
+        } catch (error) {
+          console.error("Unable to seed Firebase planner data.", error);
+          applyMonths([]);
+        }
+      },
+      error => {
+        console.error("Unable to subscribe to Firebase planner data.", error);
+        setStorageMode("local");
+        loadFromLocalStorage();
+      }
+    );
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
@@ -197,15 +252,32 @@ const App = () => {
       return;
     }
 
+    const serializedMonths = JSON.stringify(months);
+
+    if (serializedMonths === lastPersistedRef.current) {
+      return;
+    }
+
+    if (storageMode === "firebase" && plannerDocRef) {
+      lastPersistedRef.current = serializedMonths;
+
+      setDoc(plannerDocRef, {
+        months,
+        updatedAt: new Date().toISOString()
+      }).catch(error => {
+        console.error("Unable to save planner data to Firebase.", error);
+      });
+
+      return;
+    }
+
     try {
-      window.localStorage.setItem(
-        PLANNER_STORAGE_KEY,
-        JSON.stringify({ months })
-      );
+      window.localStorage.setItem(PLANNER_STORAGE_KEY, JSON.stringify({ months }));
+      lastPersistedRef.current = serializedMonths;
     } catch (error) {
       console.error("Unable to save planner data to localStorage.", error);
     }
-  }, [isHydrated, months]);
+  }, [isHydrated, months, storageMode]);
 
   const addMonth = () => {
     const lastMonth = sortMonths(months)[months.length - 1];
@@ -340,6 +412,16 @@ const App = () => {
       <div className="app-backdrop" />
       <PlannerHeader onAddMonth={addMonth} />
       <main className="app-content">
+        {storageMode !== "firebase" && (
+          <section className="storage-banner card">
+            <p className="section-label">Storage Status</p>
+            <h3>Firebase is not configured yet</h3>
+            <p className="storage-copy">
+              Add your Firebase keys to `.env` to enable cross-device syncing.
+              The planner is temporarily using local browser storage.
+            </p>
+          </section>
+        )}
         <PlannedMonthsOverview
           months={months}
           activeMonthId={activeMonthId}
